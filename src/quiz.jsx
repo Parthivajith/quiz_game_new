@@ -41,7 +41,7 @@ const Quiz = () => {
 
     const onNext = () => {
         if (trap) {
-            if (index === questions.length - 1) {
+            if (index === 11) {
                 setResult(true);
                 return;
             }
