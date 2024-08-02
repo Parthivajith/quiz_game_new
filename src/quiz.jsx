@@ -3,7 +3,7 @@ import './index.css';
 import { questions } from "./questions";
 
 const Quiz = () => {
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(12);
     const [qstn, setQstn] = useState(questions[index]);
     const [trap, setTrap] = useState(false);
     const [score, setScore] = useState(0);
