@@ -5,7 +5,7 @@ export const questions=[
         option2:"Osaka",
         option3:"Nagoyo",
         option4:"Tokyo",
-        ans:1
+        ans:4
     },
     {
         question:"Who wrote “Romeo and Juliet”?",
