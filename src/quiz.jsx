@@ -3,11 +3,12 @@ import './index.css';
 import { questions } from "./questions";
 
 const Quiz = () => {
-    const [index, setIndex] = useState(12);
+    const [index, setIndex] = useState(0);
     const [qstn, setQstn] = useState(questions[index]);
     const [trap, setTrap] = useState(false);
     const [score, setScore] = useState(0);
     const [result, setResult] = useState(false);
+    const [qno,setQno]=useState;
 
     const op1 = useRef(null);
     const op2 = useRef(null);
@@ -66,7 +67,7 @@ const Quiz = () => {
             <div className="container">
                 {result ? (
                     <>
-                        {score > 3 ? (
+                        {score > 30 ? (
                             <>
                                 <h1 className="congo">Congrats, This is your score</h1>
                             
