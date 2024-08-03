@@ -198,3 +198,57 @@ li.wrong::after {
   top: 50%;
   transform: translateY(-50%); /* Center vertically */
 }
+@media (max-width: 768px) {
+  .toptext {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: center; /* Center align items */
+      text-align: center; /* Center text */
+  }
+
+  .qno, .score {
+      font-size: 1em; /* Adjust font size for mobile */
+      margin: 5px 0; /* Add vertical spacing */
+  }
+
+  .question h2 {
+      font-size: 1.2em; /* Adjust font size */
+  }
+
+  li {
+      font-size: 0.9em; /* Adjust font size */
+      padding: 10px; /* Increase padding for touch-friendliness */
+  }
+
+  button {
+      font-size: 0.9em; /* Adjust font size */
+      height: 45px; /* Increase height for touch-friendliness */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 15px; /* Adjust padding for very small screens */
+  }
+
+  .toptext {
+      padding: 0; /* Remove extra padding */
+  }
+
+  .qno, .score {
+      font-size: 0.9em; /* Further reduce font size */
+  }
+
+  .question h2 {
+      font-size: 1em; /* Further reduce font size */
+  }
+
+  li {
+      font-size: 0.8em; /* Further reduce font size */
+      padding: 8px; /* Adjust padding */
+  }
+
+  button {
+      font-size: 0.8em; /* Further reduce font size */
+      height: 40px; /* Adjust button height */
+  }
+}
