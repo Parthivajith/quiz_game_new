@@ -177,7 +177,7 @@ button:hover {
   margin-top: 10px;
   font-family: 'Gilroy-Bold', sans-serif;
   font-weight: 700; 
-
+}
 li.correct::after {
   content: '✔'; 
   color: rgb(16, 88, 16); 
