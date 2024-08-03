@@ -64,12 +64,14 @@ h1 {
   padding-right: 20px;
   font-weight: 300;
   font-family: 'Gilroy-Bold', sans-serif;
+  color: black;
 }
 
 .qno {
   padding-left: 20px;
   font-weight: 300; 
   font-family: 'Gilroy-Bold', sans-serif;
+  color: black;
 }
 
 hr {
