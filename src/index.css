@@ -64,14 +64,14 @@ h1 {
   padding-right: 20px;
   font-weight: 300;
   font-family: 'Gilroy-Bold', sans-serif;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .qno {
   padding-left: 20px;
   font-weight: 300; 
   font-family: 'Gilroy-Bold', sans-serif;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 hr {
@@ -103,7 +103,7 @@ ul {
 li {
   position: relative;
   font-family: 'Gilroy-Bold', sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   background-color: white;
   width: 350px;
   margin: 10px auto;
