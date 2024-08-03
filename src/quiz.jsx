@@ -2,11 +2,11 @@ import React, { useRef, useState, useEffect } from "react";
 import './index.css';
 import { questions } from "./questions";
 
-// Import audio files
-import successSoundFile from './assets/success-1-6297.mp3'; // Adjust path as needed
-import failureSoundFile from './assets/failure-1-89170.mp3'; // Adjust path as needed
 
-// Helper function to get a random integer
+import successSoundFile from './assets/success-1-6297.mp3'; 
+import failureSoundFile from './assets/failure-1-89170.mp3'; 
+
+
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const ranNo = getRandomInt(0, 21);
 
@@ -29,7 +29,7 @@ const Quiz = () => {
     const failureSound = new Audio(failureSoundFile);
 
     const playagain = () => {
-        const ranNo = getRandomInt(0, 21);
+        const ranNo = getRandomInt(0, 170);
         setIndex(ranNo);
         setQstn(questions[ranNo]);  
         setResult(false);
@@ -74,7 +74,7 @@ const Quiz = () => {
         }
     };
 
-    // Play sound when result is displayed
+   
     useEffect(() => {
         if (result) {
             if (score > 7) {

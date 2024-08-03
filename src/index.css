@@ -45,9 +45,9 @@ h1 {
   width: 450px;
   background: linear-gradient(
     135deg,
-    rgba(103, 149, 220, 0.8), /* Bright blue */
-    rgba(84, 110, 212, 0.8)    /* Darker blue */
-  );  /* Gradient from yellow to pink */
+    rgba(103, 149, 220, 0.8), 
+    rgba(84, 110, 212, 0.8)  
+  );  
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -56,7 +56,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #333; /* Dark text for better contrast */
+  color: #333;
 }
 
 
@@ -120,7 +120,7 @@ li {
 button {
   margin: 10px 0;
   width: 100%;
-  max-width: 200px; /* Optional: Set a maximum width */
+  max-width: 200px; 
   height: 40px;
   border-radius: 8px;
   border: none;
@@ -128,8 +128,8 @@ button {
   color: white;
   font-size: 1em;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-  display: inline-block; /* Ensure the button aligns in center */
+  transition: 0.3s ease, transform 0.3s ease;
+  display: inline-block; 
 }
 button:hover {
   background: linear-gradient(90deg, #5a00b5, #8a00a0);
@@ -152,7 +152,7 @@ button:hover {
   color: green;
   margin-top: 10px;
   font-family: 'Gilroy-Bold', sans-serif;
-  font-weight: 700; /* Adjust this value to move the score up */
+  font-weight: 700; 
 }
 
 .congo {
@@ -176,68 +176,65 @@ button:hover {
   color: red;
   margin-top: 10px;
   font-family: 'Gilroy-Bold', sans-serif;
-  font-weight: 700; /* Adjust this value to move the score up */
-}
+  font-weight: 700; 
 
 li.correct::after {
-  content: '✔'; /* Unicode checkmark */
-  color: rgb(16, 88, 16); /* Color of the tick mark */
-  font-size: 18px; /* Adjust size as needed */
+  content: '✔'; 
+  color: rgb(16, 88, 16); 
+  font-size: 18px; 
   position: absolute;
-  right: 10px; /* Position it at the end */
+  right: 10px; 
   top: 50%;
-  transform: translateY(-50%); /* Center vertically */
+  transform: translateY(-50%); 
 }
 
 li.wrong::after {
-  content: '✘'; /* Unicode cross mark */
-  color: rgb(169, 12, 12); /* Color of the cross mark */
-  font-size: 18px; /* Adjust size as needed */
+  content: '✘'; 
+  color: rgb(169, 12, 12); 
+  font-size: 18px; 
   position: absolute;
-  right: 10px; /* Position it at the end */
+  right: 10px; 
   top: 50%;
-  transform: translateY(-50%); /* Center vertically */
-}
-@media (max-width: 768px) {
+  transform: translateY(-50%); media (max-width: 768px) {
   .toptext h3 {
-      font-size: 1rem; /* Adjust size for tablets and smaller screens */
+      font-size: 1rem; 
   }
 
   h1.bigscore, h1.smallscore {
-      font-size: 4rem; /* Adjust size for tablets and smaller screens */
+      font-size: 4rem; 
   }
 
   h1.congo, h1.btr {
-      font-size: 2rem; /* Adjust size for tablets and smaller screens */
+      font-size: 2rem; 
   }
 
   h2 {
-      font-size: 1.2rem; /* Adjust size for tablets and smaller screens */
+      font-size: 1.2rem; 
   }
 
   button {
-      font-size: 0.9rem; /* Adjust size for tablets and smaller screens */
+      font-size: 0.9rem; 
   }
 }
 
 @media (max-width: 480px) {
   .toptext h3 {
-      font-size: 0.9rem; /* Further adjust size for mobile phones */
+      font-size: 0.9rem; 
   }
 
   h1.bigscore, h1.smallscore {
-      font-size: 3rem; /* Further adjust size for mobile phones */
+      font-size: 3rem; 
   }
 
   h1.congo, h1.btr {
-      font-size: 1.5rem; /* Further adjust size for mobile phones */
+      font-size: 1.5rem; 
   }
 
   h2 {
-      font-size: 1rem; /* Further adjust size for mobile phones */
+      font-size: 1rem; 
   }
 
   button {
-      font-size: 0.8rem; /* Further adjust size for mobile phones */
+      font-size: 0.8rem; 
   }
 }
