@@ -1,14 +1,22 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import './index.css';
 import { questions } from "./questions";
 
+// Import audio files
+import successSoundFile from './assets/success-1-6297.mp3'; // Adjust path as needed
+import failureSoundFile from './assets/failure-1-89170.mp3'; // Adjust path as needed
+
+// Helper function to get a random integer
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const ranNo = getRandomInt(0, 21);
+
 const Quiz = () => {
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(ranNo);
     const [qstn, setQstn] = useState(questions[index]);
     const [trap, setTrap] = useState(false);
     const [score, setScore] = useState(0);
     const [result, setResult] = useState(false);
-    const [qno,setQno]=useState;
+    const [qNo, setQNo] = useState(1);
 
     const op1 = useRef(null);
     const op2 = useRef(null);
@@ -16,14 +24,19 @@ const Quiz = () => {
     const op4 = useRef(null);
     const opArray = [op1, op2, op3, op4];
 
-    const playagain=()=>
-    {
-        setIndex(0);
-        setQstn(questions[index]);
+    // Audio files for result
+    const successSound = new Audio(successSoundFile);
+    const failureSound = new Audio(failureSoundFile);
+
+    const playagain = () => {
+        const ranNo = getRandomInt(0, 21);
+        setIndex(ranNo);
+        setQstn(questions[ranNo]);  
         setResult(false);
         setScore(0);
         setTrap(false);
-    }
+        setQNo(1);
+    };
 
     const checkAnswer = (e, ans) => {
         if (!trap) {
@@ -41,7 +54,7 @@ const Quiz = () => {
 
     const onNext = () => {
         if (trap) {
-            if (index === 11) {
+            if (qNo >= 10) {  
                 setResult(true);
                 return;
             }
@@ -51,6 +64,7 @@ const Quiz = () => {
                 return newIndex;
             });
             setTrap(false);
+            setQNo(prevQNo => prevQNo + 1);  
             opArray.forEach(option => {
                 if (option.current) {
                     option.current.classList.remove("correct");
@@ -60,24 +74,31 @@ const Quiz = () => {
         }
     };
 
+    // Play sound when result is displayed
+    useEffect(() => {
+        if (result) {
+            if (score > 7) {
+                successSound.play().catch(e => console.log('Audio play error:', e));
+            } else {
+                failureSound.play().catch(e => console.log('Audio play error:', e));
+            }
+        }
+    }, [result, score]);
+
     return (
         <>
-            <h1>Quizzer</h1>
-
             <div className="container">
                 {result ? (
                     <>
-                        {score > 30 ? (
+                        {score > 7 ? (
                             <>
                                 <h1 className="congo">Congrats, This is your score</h1>
-                            
                                 <h1 className="bigscore">{score}</h1>
                                 <button onClick={playagain}>Play Again</button>
                             </>
                         ) : (
                             <>
-                                <h1>Better luck next time, This is your score</h1>
-                            
+                                <h1 className="btr">Better luck next time, This is your score</h1>
                                 <h1 className="smallscore">{score}</h1>
                                 <button onClick={playagain}>Play Again</button>
                             </>
@@ -86,8 +107,8 @@ const Quiz = () => {
                 ) : (
                     <>
                         <div className="toptext">
+                            <h3 className="qno">Q.No: {qNo}</h3>
                             <h3 className="score">Score: {score}</h3>
-                            <h3 className="qno">Q.No: {index + 1}</h3>
                         </div>
                         <hr />
                         <div className="question">
@@ -106,6 +127,5 @@ const Quiz = () => {
         </>
     );
 };
-
 
 export default Quiz;

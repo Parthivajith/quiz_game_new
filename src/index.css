@@ -1,9 +1,95 @@
-/* General Reset */
+@media (max-width: 768px) {
+  .container {
+      width: 95%;
+      padding: 15px;
+  }
+  
+  .toptext {
+      flex-direction: column;
+  }
+  
+  .toptext > div {
+      align-items: center;
+  }
+  
+  h1 {
+      font-size: 1.5em; /* Smaller font size */
+  }
+  
+  .bigscore, .smallscore {
+      font-size: 150px; /* Adjust font size */
+  }
+  .score{
+    margin: 0 auto;
+
+  }
+  .qno{
+    margin: 0 auto;
+    
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .container {
+      width: 100%;
+      padding: 10px;
+  }
+  
+  .toptext {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .toptext > div {
+      align-items: center;
+  }
+  
+  h1 {
+      font-size: 1.2em; /* Smaller font size */
+  }
+  
+  .bigscore, .smallscore {
+      font-size: 100px; /* Adjust font size */
+  }
+  
+  li {
+      font-size: 0.9em; /* Adjust font size for list items */
+  }
+  
+  button {
+      width: 100%;
+      font-size: 0.9em; /* Adjust font size */
+  }
+  .score{
+    padding-right: 0px;
+  }
+  .qno{
+    padding-left: 0px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Gilroy-Bold', sans-serif;
+  overflow: hidden;
+}
 
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Gilroy-Bold', sans-serif;
+  background-image: url('C:\Users\parth\quiz_game\src\assets\images\34da9859-2fbd-468d-b952-ab920832b4e0.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .toptext {
   display: flex;
   justify-content: space-between;
@@ -26,23 +112,33 @@ h1 {
 .container {
   margin: auto;
   width: 450px;
-  background-color: rgb(113, 182, 182);
-  border-radius: 8px;
-  margin-top: 100px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-direction: column;
+  background: linear-gradient(
+    135deg,
+    rgba(103, 149, 220, 0.8), /* Bright blue */
+    rgba(84, 110, 212, 0.8)    /* Darker blue */
+  );  /* Gradient from yellow to pink */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #333; /* Dark text for better contrast */
 }
 
+
 .score {
-  padding-left: 20px;
+  padding-right: 20px;
   font-weight: 200;
+  font-family: 'Gilroy-Bold', sans-serif;
 }
 
 .qno {
-  padding-right: 20px;
+  padding-left: 20px;
   font-weight: 200; 
+  font-family: 'Gilroy-Bold', sans-serif;
 }
 
 hr {
@@ -52,13 +148,18 @@ hr {
 .question {
   margin: auto;
   text-align: center;
+  padding-right: 10px;
 }
 
 .question h2 {
   margin-bottom: 15px;
   text-align: left;
-  font-weight: 400;
+  font-weight: 525;
   margin-left: 20px;
+  font-family: 'Gilroy-Bold', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+  
 }
 
 ul {
@@ -66,6 +167,9 @@ ul {
 }
 
 li {
+  position: relative;
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-weight: 200;
   background-color: white;
   width: 350px;
   margin: 10px auto;
@@ -80,17 +184,24 @@ li {
 }
 
 button {
-  margin: auto; 
-  width: 100px;
-  height: 25px;
-  border-radius: 2px;
-  cursor: pointer;
-  background-color: rgb(138, 32, 232);
-  color: white;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 200px; /* Optional: Set a maximum width */
+  height: 40px;
+  border-radius: 8px;
   border: none;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  background: linear-gradient(90deg, #7d00ff, #b500b5);
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Ensure the button aligns in center */
 }
+button:hover {
+  background: linear-gradient(90deg, #5a00b5, #8a00a0);
+  transform: scale(1.05);
+}
+
 
 .container .correct {
   background-color: rgb(42, 226, 97);
@@ -105,16 +216,51 @@ button {
 .bigscore {
   font-size: 200px;
   color: green;
-  margin-top: 10px; /* Adjust this value to move the score up */
+  margin-top: 10px;
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-weight: 700; /* Adjust this value to move the score up */
 }
 
 .congo {
   margin-bottom: 0;
   padding-bottom: 0;
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
+.btr {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 
 .smallscore {
   font-size: 200px;
   color: red;
-  margin-top: 10px; /* Adjust this value to move the score up */
+  margin-top: 10px;
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-weight: 700; /* Adjust this value to move the score up */
+}
+
+li.correct::after {
+  content: '✔'; /* Unicode checkmark */
+  color: rgb(16, 88, 16); /* Color of the tick mark */
+  font-size: 18px; /* Adjust size as needed */
+  position: absolute;
+  right: 10px; /* Position it at the end */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+}
+
+li.wrong::after {
+  content: '✘'; /* Unicode cross mark */
+  color: rgb(169, 12, 12); /* Color of the cross mark */
+  font-size: 18px; /* Adjust size as needed */
+  position: absolute;
+  right: 10px; /* Position it at the end */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
 }
