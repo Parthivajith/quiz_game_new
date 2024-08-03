@@ -16,7 +16,7 @@ body{
   padding: 0;
   height: 100%;
   font-family: 'Gilroy-Bold', sans-serif;
-  background-image: url('C:\Users\parth\quiz_game\src\assets\images\34da9859-2fbd-468d-b952-ab920832b4e0.jpg');
+  background-image: url('../src/assets/images/34da9859-2fbd-468d-b952-ab920832b4e0.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
