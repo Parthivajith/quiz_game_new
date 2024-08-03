@@ -8,7 +8,7 @@ import failureSoundFile from './assets/failure-1-89170.mp3';
 
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-const ranNo = getRandomInt(0, 21);
+const ranNo = getRandomInt(0, 170);
 
 const Quiz = () => {
     const [index, setIndex] = useState(ranNo);
